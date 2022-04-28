@@ -5,13 +5,15 @@ import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
 
+const GIPHY_API_KEY = 'z45leHbVfCfS0rA5jqY5PLdHOhQaBFNO';
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       gifs: [],
-      selectedGifId: null
+      selectedGifId: 'FQyQEYd0KlYQ'
     };
     this.search = this.search.bind(this);
     this.selectGif = this.selectGif.bind(this);
@@ -19,7 +21,7 @@ class App extends Component {
 
   search = (query) => {
     // Call the Giphy API with API key created on Giphy Developper
-    giphyApi('z45leHbVfCfS0rA5jqY5PLdHOhQaBFNO').search({
+    giphyApi(GIPHY_API_KEY).search({
       q: query,
       rating: 'g',
       limit: 10
