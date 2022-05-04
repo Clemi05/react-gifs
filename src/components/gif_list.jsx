@@ -3,8 +3,9 @@ import Gif from './gif';
 
 class GifList extends Component {
   renderList = () => {
-    return this.props.gifs.map((gif) => {
-      return <Gif id={gif.id} key={gif.id} selectGif={this.props.selectGif} />;
+    const { gifs, selectGif } = this.props;
+    return gifs.map((gif) => {
+      return <Gif id={gif.id} key={gif.id} selectGif={selectGif} />;
     });
   }
 
