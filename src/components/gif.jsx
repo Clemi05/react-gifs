@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class Gif extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    const { id } = this.props;
+    return nextProps.id !== id;
+  }
+
   handleClick = () => {
     const { selectGif, id } = this.props;
     if (selectGif) {
